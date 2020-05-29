@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+              } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }
+            
+            function showPosition(position) {
+              var latitude = position.coords.latitude;
+              var latMin= -26.2279;
+              var latMax= -26.2271;
+            
+              if(latitude >= latMin && latitude <=latMax){
+                  alert("oi");
+              }else{
+                  alert("deu ruim piazao");
+              }
+             
+              
+            }
+             
+            
+            </script>
+    </head>
+<body onload="getLocation()">
+
+
+
+
+
+
+
+
+</body>
+</html>
